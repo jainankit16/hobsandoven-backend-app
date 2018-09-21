@@ -1,0 +1,33 @@
+{
+  "db": {
+    "host": "localhost",
+    "port": 3306,
+    "database": "hobsandoven",
+    "password": "pass",
+    "name": "db",
+    "user": "root",
+    "connector": "mysql",
+    "debug": false,
+    "options": {
+      "encrypt": "true"
+    }
+  },
+  "docDb": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "hobsandoven",
+    "password": "",
+    "name": "docDb",
+    "user": "",
+    "connector": "mongodb",
+    "debug": false
+  },
+  "storage": {
+    "name": "storage",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./uploads",
+    "maxFileSize": "10485760"
+  }
+}

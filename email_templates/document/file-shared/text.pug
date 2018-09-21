@@ -1,0 +1,7 @@
+extends ../../common/layouts/basic.pug
+
+block content
+  p 
+  p Dear user,
+  p #{ctx.sharedBy} has shared a document with you. 
+  p Click here to <a href="#{docURL}">View Link</a>

@@ -1,0 +1,14 @@
+extends ../../common/layouts/default.pug
+
+block content
+  table.body-wrap(align='center', width='80%')
+    tbody
+      tr
+        td.container(bgcolor='#FFFFFF')
+          .content
+          p Hi #{ctx.name},
+          p The password associated with your Serviceo account was changed on #{ctx.date}
+          p If you made this change, you can ignore this email.
+          p If you did not make this change, please contact support@serviceo.me immediately.
+          p Take care
+          p Your Serviceo Team

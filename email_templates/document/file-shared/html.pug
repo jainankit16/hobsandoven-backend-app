@@ -1,0 +1,11 @@
+extends ../../common/layouts/default.pug
+
+block content
+  table.body-wrap(align='center', width='80%')
+    tbody
+      tr
+        td.container(bgcolor='#FFFFFF')
+          .content
+          p Dear user,     
+          p #{ctx.sharedBy} has shared a document with you. 
+          p Click here to <a href="#{docURL}">View Document</a>

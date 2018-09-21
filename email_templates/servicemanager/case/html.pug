@@ -1,0 +1,136 @@
+extends ../../common/layouts/default.pug
+
+block content
+    table.body-wrap(align='center')
+      tbody
+        tr
+          td
+            |
+            h3 Order (PMS Case Details)
+            |       
+            b (1) Account & Program Information #{ctx.case.accountName}
+        tr
+          td.container(bgcolor='#FFFFFF')
+            .content
+              table(border='0', cellpadding='5', cellspacing='0', bgcolor='#ffffff')
+                tbody
+                  tr
+                    td.header Account Name
+                    td #{ctx.case.accountName} 
+                    td.header Program
+                    td #{ctx.case.programName}
+        tr
+          td
+            |     
+            |
+            b (2) Case Contact 
+        tr
+          td.container(bgcolor='#FFFFFF')
+            .content
+              table(border='0', cellpadding='5', cellspacing='0', bgcolor='#ffffff')
+                tbody
+                  tr
+                    td.header JobSite/Ship Contact (Name)
+                    td #{ctx.case.jSContactName} 
+                    td.header JobSite/Ship Contact (Email Address)
+                    td #{ctx.case.jSContactEmail}
+                  tr
+                    td.header JobSite/Ship Contact (Phone Number)
+                    td #{ctx.case.jSContactPhone} 
+                    td.header JobSite/Ship to Company Name
+                    td #{ctx.case.jsCompanyName}
+        tr
+          td
+            |     
+            |
+            b  (3a) Case Details 
+        tr
+          td.container(bgcolor='#FFFFFF')
+            .content
+              table(border='0', cellpadding='5', cellspacing='0', bgcolor='#ffffff')
+                tbody
+                  tr
+                    td.header Case Number
+                    td #{ctx.case.caseNumber} 
+                    td.header Status
+                    td #{ctx.case.caseStatus}
+                  tr
+                    td.header Case Origin
+                    td #{ctx.case.caseOrigin} 
+                    td.header Case Summary
+                    td #{ctx.case.caseSummary}       
+                  tr
+                    td.header Case Subject
+                    td #{ctx.case.caseSubject} 
+                    td.header Custom work order instructions
+                    td #{ctx.case.caseInstructions}
+                  tr
+                    td.header IRON PMS Case Number
+                    td #{ctx.case.ironCaseNumber} 
+                    td.header Partner Case Number
+                    td #{ctx.case.partnerCaseNumber}  
+                  tr
+                    if ctx.isInternalUser != 'false'
+                      td.header Case RecordType
+                      td #{ctx.case.rTypeName}  
+                    td.header Work Order#
+                    td #{ctx.case.wOrderName}
+                  tr
+                    td.header Jobsite #
+                    td #{ctx.case.jobsiteName} 
+                    td.header Jobsite Country
+                    td #{ctx.case.jobsiteCountry} 
+                  tr
+                    td.header Talent Type
+                    td #{ctx.case.talentType} 
+                    td.header Service Technical Level
+                    td #{ctx.case.service_Level__c}
+                  tr
+                    td.header Service Dispatch SLA Priority
+                    td #{ctx.case.SLA_Priority__c} 
+                    if ctx.isInternalUser != 'false'
+                      td.header SKU
+                      td #{ctx.case.Sku_Comparison__c} 
+        tr
+          td
+            |       
+            b Work Order Line Details
+        tr
+          td.container(bgcolor='#FFFFFF')
+            .content
+              table(border='0', cellpadding='5', cellspacing='0', bgcolor='#ffffff')
+                tbody
+                  tr
+                    td.header Service ID
+                    td.header Service Description 
+                    td.header PPM Hours
+                    td.header Price 
+                  if ctx.workOrderLine
+                    each val, index in ctx.workOrderLine
+                      tr
+                        td= val['__data']['Product']['__data']['Product_ID__c']
+                        td= val['__data']['Product']['__data']['Description']
+                        td= val['__data']['Order_Quantity__c']
+                        td= val['__data']['Total_Price_Customer_Pre_Tax_Auto__c']
+        if ctx.isInternalUser != 'false'
+          tr
+            td
+              |       
+              b Sales Order Line Details
+          tr
+            td.container(bgcolor='#FFFFFF')
+              .content
+                table(border='0', cellpadding='5', cellspacing='0', bgcolor='#ffffff')
+                  tbody
+                    tr
+                      td.header Order Line Number
+                      td.header Sales Order Number 
+                      td.header Product
+                      td.header Price   
+                    if ctx.salesOrderLine
+                      each val, index in ctx.salesOrderLine
+                        tr
+                          td= val['__data']['orderItems']['__data']['OrderItemNumber']
+                          td= val['__data']['OrderNumber']
+                          td= val['__data']['orderItems']['__data']['product']['__data']['Name']
+                          td= val['__data']['orderItems']['__data']['ListPrice']    

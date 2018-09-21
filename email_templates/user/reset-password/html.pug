@@ -1,0 +1,16 @@
+extends ../../common/layouts/default.pug
+
+block content
+  table.body-wrap(align='center', width='80%')
+    tbody
+      tr
+        td.container(bgcolor='#FFFFFF')
+          .content
+          p Hello #{ctx.user.firstname + ' ' + ctx.user.lastname},
+          p We have recevied a reset password request. If you did not initiate this request, then please ignore this message.
+          p To reset your password, please click on the link below or cut and paste it into your browser address bar.
+          p <a href="#{ctx.url}">#{ctx.url}</a>
+          p After changing your password, you’ll receive a confirmation email from us.
+          p
+          p Thanks,
+          p Support Team at Serviceo

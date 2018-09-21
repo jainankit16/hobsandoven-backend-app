@@ -1,0 +1,81 @@
+{
+    "_meta": {
+        "sources": [
+            "loopback/common/models",
+            "loopback/common/custom-services",
+            "loopback/server/models",
+            "../common/models",
+            "../common/custom-services",
+            "./models"
+        ],
+        "mixins": [
+            "loopback/common/mixins",
+            "../node_modules/loopback-ds-timestamp-mixin",
+            "loopback/server/mixins",
+            "../common/mixins",
+            "./mixins"
+        ]
+    },
+    "AccessToken": {
+        "dataSource": "db",
+        "public": false,
+        "options": {
+            "slidingExpiration": true,
+            "emailVerificationRequired": false,
+            "ttl": 1200
+        },
+        "relations": {
+            "user": {
+                "type": "belongsTo",
+                "model": "Users",
+                "foreignKey": "userId"
+            }
+        }
+    },
+    "ACL": {
+        "dataSource": "db",
+        "public": false
+    },
+    "RoleMapping": {
+        "dataSource": "db",
+        "public": false,
+        "options": {
+            "strictObjectIDCoercion": true
+        }
+    },
+    "Role": {
+        "dataSource": "db",
+        "public": false
+    },
+    
+    "Users": {
+        "dataSource": "db",
+        "public": true
+    },
+    "Timezone": {
+        "dataSource": "db",
+        "public": true
+    },
+    "Country": {
+        "dataSource": "db",
+        "public": true
+    },
+    
+    "Comment": {
+        "dataSource": "docDb",
+        "public": true
+    },
+    "Activity": {
+        "dataSource": "docDb",
+        "public": true
+    },
+
+    "EmailService": {
+        "dataSource": false,
+        "public": true
+    },
+    "GoogleService": {
+        "dataSource": false,
+        "public": true
+    }
+}

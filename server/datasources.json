@@ -1,0 +1,57 @@
+{
+    "db": {
+        "host": "localhost",
+        "port": 3307,
+        "database": "sg1",
+        "password": "",
+        "name": "db",
+        "user": "root",
+        "connector": "mysql",
+        "debug": false,
+        "options": {
+            "encrypt": "true"
+        }
+    },
+    "docDb": {
+        "host": "localhost",
+        "port": 27017,
+        "url": "",
+        "database": "sg1",
+        "password": "",
+        "name": "docDb",
+        "user": "",
+        "connector": "mongodb",
+        "debug": false
+    },
+    "storage": {
+        "name": "storage",
+        "connector": "loopback-component-storage",
+        "provider": "filesystem",
+        "root": "./uploads",
+        "maxFileSize": "10485760"
+    },
+    "emailPrimary": {
+        "name": "emailPrimary",
+        "connector": "mail",
+        "transports": [
+            {
+                "type": "smtp",
+                "host": "smtp.gmail.com",
+                "secure": false,
+                "port": 587,
+                "tls": {
+                    "rejectUnauthorized": false
+                },
+                "auth": {
+                    "user": "ironsysdev@gmail.com",
+                    "pass": "Zaq1@wsx1234"
+                }
+            }
+        ]
+    },
+    "sendgrid": {
+        "name": "sendgrid",
+        "connector": "loopback-connector-sendgrid",
+        "api_key": "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"
+    }
+}

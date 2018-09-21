@@ -1,0 +1,21 @@
+extends ../../common/layouts/default.pug
+
+block content
+  table.body-wrap(align='center', width='80%')
+    tbody
+      tr
+        td.container(bgcolor='#FFFFFF')
+          .content
+            p Dear #{ctx.user.firstname + ' ' + ctx.user.lastname},     
+            p You can use the following credentials to access your account.
+            | 
+            p Your username is : #{ctx.user.email} 
+            p Your password is : #{ctx.user.password} 
+            |
+            p Click here to login <a href="#{ctx.url}">#{ctx.url}</a>
+            p You can book mark this link for quick access.
+            |
+            p Please note that this email is unique to you. Be careful not to forward this mail.
+            p If you did not initiate this request, then please ignore this message.
+            |
+            p Thanks!         

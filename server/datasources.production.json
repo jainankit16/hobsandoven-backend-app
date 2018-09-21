@@ -1,0 +1,57 @@
+{
+    "db": {
+        "host": "${DB_HOST}",
+        "port": "${DB_PORT}",
+        "database": "${DB_NAME}",
+        "password": "${DB_PASSWD}",
+        "name": "db",
+        "user": "${DB_USER}",
+        "connector": "mssql",
+        "debug": true,
+        "options": {
+            "encrypt": "true"
+        }
+    },
+    "docDb": {
+      "host": "${MONGODB_HOST}",
+      "port": "${MONGODB_PORT}",
+      "url": "${MONGODB_URL}",
+      "database": "${MONGODB_DBNAME}",
+      "password": "${MONGODB_PASSWD}",
+      "name": "docDb",
+      "user": "${MONGODB_USER}",
+      "connector": "mongodb"
+    },
+    "storage": {
+        "name": "storage",
+        "connector": "loopback-component-storage",
+        "provider": "azure",
+        "root": "./uploads",
+        "storageAccount": "${CLOUD_STORAGE_ACCOUNT}",
+        "storageAccessKey": "${CLOUD_STORAGE_KEY}",
+        "maxFileSize": "10485760"
+    },
+    "emailPrimary": {
+        "name": "emailPrimary",
+        "connector": "mail",
+        "transports": [
+            {
+                "type": "smtp",
+                "host": "smtp.gmail.com",
+                "secure": false,
+                "port": 587,
+                "tls": {
+                    "rejectUnauthorized": false
+                },
+                "auth": {
+                    "user": "ironsysdev@gmail.com",
+                    "pass": "Zaq1@wsx1234"
+                }
+            }
+        ]
+    },
+    "sendgrid": {
+        "connector": "loopback-connector-sendgrid",
+        "api_key": "${SENDGRID_API_KEY}"
+    }
+}

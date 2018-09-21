@@ -1,0 +1,33 @@
+extends ../../common/layouts/basic.pug
+
+block content
+  p
+  p New file has been uploaded by #{ctx.uploadedBy}.
+  p
+  table.body-wrap
+    tbody
+      tr
+        td
+        td.container(bgcolor='#FFFFFF')
+          .content
+            table(border='0', cellpadding='5', cellspacing='0', bgcolor='#ffffff')
+              tbody
+                tr
+                  td.header Filename
+                  td #{ctx.fileMeta.name}
+                tr
+                  td.header Title
+                  td #{ctx.subCategoryId}
+                tr
+                  td.header Category
+                  td #{ctx.categoryId}
+                tr
+                  td.header Related To
+                  td #{ctx.modelName}
+                tr
+                  td.header Size
+                  td #{ctx.fileMeta.size}
+                tr
+                  td.header Description
+                  td #{ctx.description}
+        td

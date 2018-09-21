@@ -1,0 +1,50 @@
+doctype html
+html(xmlns='http://www.w3.org/1999/xhtml')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width')
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    title #{subject}
+    link(rel="stylesheet", href="/css/basic.css", data-inline)
+  body(bgcolor='#FFFFFF')
+    // HEADER
+    table.head-wrap(bgcolor='#1e88e5')
+      tbody
+        tr
+          td
+          td.header.container
+            .content
+              table(bgcolor='#1e88e5')
+                tbody
+                  tr
+                    td
+                      img(src='https://msp.dev.serviceo.me/assets/images/logo-text-white.png')
+                    td(align='right')
+                      h6.collapse serviceo
+          td
+    // /HEADER
+    // BODY
+    block content
+    // /BODY
+    // FOOTER
+    table.footer-wrap
+      tbody
+        tr
+          td
+          td.container
+            // content
+            .content
+              table
+                tbody
+                  tr
+                    td(align='center')
+                      p
+                        a(href='#') Terms
+                        | |
+                        a(href='#') Privacy
+                        | |
+                        a(href='#')
+                          unsubscribe Unsubscribe
+            // /content
+          td
+    // /FOOTER

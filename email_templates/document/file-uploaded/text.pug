@@ -1,0 +1,21 @@
+block content
+    p New file has been uploaded by #{ctx.uploadedBy}.
+    p
+    p
+      strong Filename:
+      span #{ctx.fileMeta.name}
+    p
+      strong Title:
+      span #{ctx.subCategoryId}
+    p
+      strong Category:
+      span #{ctx.categoryId}
+    p
+      strong Related To:
+      span #{ctx.modelName}
+    p
+      strong Size:
+      span #{ctx.fileMeta.size}
+    p
+      strong Description:
+      span #{ctx.description}

@@ -1,0 +1,14 @@
+{
+  "name": "serviceo-backend",
+  "script": "src/app.js",
+  "instances": "2",
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "env_staging" : {
+    "NODE_ENV": "staging"
+  },
+  "env_production" : {
+    "NODE_ENV": "production"
+  }
+}
