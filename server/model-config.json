@@ -22,7 +22,7 @@
         "options": {
             "slidingExpiration": true,
             "emailVerificationRequired": false,
-            "ttl": 1200
+            "ttl": 1209600
         },
         "relations": {
             "user": {
@@ -47,35 +47,12 @@
         "dataSource": "db",
         "public": false
     },
-    
     "Users": {
         "dataSource": "db",
         "public": true
     },
-    "Timezone": {
-        "dataSource": "db",
-        "public": true
-    },
-    "Country": {
-        "dataSource": "db",
-        "public": true
-    },
-    
-    "Comment": {
-        "dataSource": "docDb",
-        "public": true
-    },
     "Activity": {
         "dataSource": "docDb",
-        "public": true
-    },
-
-    "EmailService": {
-        "dataSource": false,
-        "public": true
-    },
-    "GoogleService": {
-        "dataSource": false,
         "public": true
     }
 }

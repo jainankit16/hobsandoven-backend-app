@@ -1,6 +1,8 @@
 {
-  "name": "sg-app-backend",
+  "name": "hobsandoven-backend-app",
   "version": "1.0.0",
+  "license": "UNLICENSED",
+  "description": "HobsAndOven Backend App",
   "main": "server/server.js",
   "engines": {
     "node": ">=4"
@@ -65,7 +67,5 @@
   "repository": {
     "type": "",
     "url": ""
-  },
-  "license": "UNLICENSED",
-  "description": "Serviceo Live Backend"
+  }
 }

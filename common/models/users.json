@@ -29,6 +29,10 @@
       "required": true,
       "length": 255
     },
+    "phone": {
+      "type": "string",
+      "length": 40
+    },
     "password": {
       "type": "string"
     }
@@ -37,36 +41,29 @@
   "relations": {},
   "acls": [
     {
-      "accessType": "*",
       "principalType": "ROLE",
       "principalId": "$everyone",
-      "permission": "ALLOW"
+      "permission": "DENY"
     },
     {
-      "accessType": "READ",
       "principalType": "ROLE",
-      "principalId": "$authenticated",
+      "principalId": "$everyone",
       "permission": "ALLOW",
-      "property": "*"
+      "property": [
+        "create",
+        "login",
+        "logout"
+      ]
     },
     {
-      "accessType": "EXECUTE",
-      "principalType": "ROLE",
-      "principalId": "$authenticated",
-      "permission": "ALLOW",
-      "property": "*"
-    },
-    {
-      "accessType": "WRITE",
       "principalType": "ROLE",
       "principalId": "$owner",
-      "permission": "ALLOW"
-    },
-    {
-      "accessType": "*",
-      "principalType": "ROLE",
-      "principalId": "$unauthenticated",
-      "permission": "DENY"
+      "permission": "ALLOW",
+      "property": [
+        "deleteById",
+        "findById",
+        "updateAttributes"
+      ]
     }
   ],
   "methods": {}

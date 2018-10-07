@@ -26,17 +26,6 @@ boot(app, __dirname, function (err) {
   // if we are running loopback as our server
   if (require.main === module) {
     app.use(loopback.token({}));
-    app.use(function updateToken(req, res, next) {
-      // get the accessToken from the json-ified request
-      var token = req.accessToken;
-      // if there's no token we use next() to delegate handling back to loopback
-      if (!token) return next();
-      // performance optimization, we do not update the token more often than once per five seconds
-      var now = new Date();
-      if (now.getTime() - token.created.getTime() < 5000) return next();
-      // save to db and move on
-      token.updateAttribute('created', now, next);
-    });
     app.start();
   }
 });

@@ -3,9 +3,9 @@
     "host": "localhost",
     "port": 3306,
     "database": "hobsandoven",
-    "password": "pass",
     "name": "db",
     "user": "root",
+    "password": "pass",
     "connector": "mysql",
     "debug": false,
     "options": {
@@ -17,9 +17,9 @@
     "port": 27017,
     "url": "",
     "database": "hobsandoven",
-    "password": "",
-    "name": "docDb",
+    "name": "docDb",   
     "user": "",
+    "password": "",
     "connector": "mongodb",
     "debug": false
   },

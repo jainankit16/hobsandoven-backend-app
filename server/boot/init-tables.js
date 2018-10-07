@@ -11,13 +11,10 @@ module.exports = function (app) {
     'RoleMapping',
     'Role',
 
-    'Country',
-    'Timezone',
     'Users'
   ];
 
   var docDbModels = [
-    'Comment',
     'Activity',
   ];
 
